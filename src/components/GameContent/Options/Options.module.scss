@@ -1,0 +1,14 @@
+.options_container {
+  width: 45%;
+  background-color: lightpink;
+}
+
+.options_list {}
+
+.options_item {}
+
+@media (max-width: 450px) {
+  .options_container {
+    width: 250px;
+  }
+}

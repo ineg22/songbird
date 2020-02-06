@@ -1,0 +1,16 @@
+.description_container {
+  width: 45%;
+  background-color: lightpink;
+}
+
+.description_img {
+  width: 200px;
+  height: 160px;
+  background-color: red;
+}
+
+@media (max-width: 450px) {
+  .description_container {
+    width: 250px;
+  }
+}
