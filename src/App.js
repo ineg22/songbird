@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Question from './components/Question/Question';
 import GameContent from './components/GameContent/GameContent';
 import NextLevelButton from './components/NextLevelButton/NextLevelButton';
+import GameOver from './components/GameOver/GameOver';
 
 import data from './bll/data';
 
@@ -13,7 +14,8 @@ class App extends Component {
     super();
     this.state = {
       currentQuestionBlock: 0,
-      currentRightOption: Math.floor(Math.random() * 6),
+      // currentRightOption: Math.floor(Math.random() * 6),
+      currentRightOption: 0,
       currentBlockSelectedOptions: [false, false, false, false, false, false],
       lastSelectedOption: null,
       score: 0,
@@ -52,20 +54,25 @@ class App extends Component {
 
   onNextClick() {
     this.setState(state => {
+      let newCurrentQuestionBlock;
+      let newGameDone;
+
       if (state.currentQuestionBlock === 5) {
-        return {
-          ...state,
-          gameDone: true,
-          levelDone: true,
-        };
+        newCurrentQuestionBlock = 0;
+        newGameDone = true;
+      } else {
+        newCurrentQuestionBlock = state.currentQuestionBlock + 1;
+        newGameDone = false;
       }
       return {
         ...state,
-        currentBlockSelectedOptions: [false, false, false, false, false, false],
-        lastSelectedOption: null,
+        gameDone: newGameDone,
+        currentQuestionBlock: newCurrentQuestionBlock,
         levelDone: false,
-        currentQuestionBlock: state.currentQuestionBlock + 1,
-        currentRightOption: Math.floor(Math.random() * 6),
+        lastSelectedOption: null,
+        // currentRightOption: Math.floor(Math.random() * 6),
+        currentRightOption: 0,
+        currentBlockSelectedOptions: [false, false, false, false, false, false],
       };
     });
   }
@@ -78,7 +85,21 @@ class App extends Component {
       score,
       levelDone,
       lastSelectedOption,
+      gameDone,
     } = this.state;
+
+    if (gameDone) {
+      return (
+        <div className={styles.container}>
+          <Header
+            questionBlocks={data[6]}
+            currentQuestionBlock={currentQuestionBlock}
+            score={score}
+          />
+          <GameOver score={score} />
+        </div>
+      );
+    }
 
     return (
       <div className={styles.container}>

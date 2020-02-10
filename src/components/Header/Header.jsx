@@ -17,7 +17,7 @@ export default function Header({ questionBlocks, currentQuestionBlock, score }) 
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.logo}>logo</h1>
+      <div className={styles.logo} />
       <span>{`score: ${score}`}</span>
       <ul className={styles.staticBar__list}>{questionElements}</ul>
     </header>

@@ -1,26 +1,29 @@
 .header {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 20px;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
 
 .staticBar__list {
-  list-style: none;
   display: flex;
   width: 100%;
   margin: 0;
   padding: 0;
-  border-radius: 10px;
+
+  list-style: none;
 
   background-color: grey;
+  border-radius: 10px;
 }
 
 .staticBar__item {
   width: calc(100% / 6);
-  text-align: center;
   padding: 10px 0;
+
+  text-align: center;
+
   border-radius: 10px;
 }
 
@@ -29,7 +32,13 @@
 }
 
 .logo {
+  width: 105px;
+  height: 50px;
   margin: 10px 0;
+
+  background-image: url("../../assets/images/logo1.jpg");
+  background-size: cover;
+  border-radius: 20px;
 }
 
 @media (max-width: 600px) {
