@@ -1,13 +1,86 @@
+.empty {
+  width: 55%;
+  margin: 20px;
+
+  p {
+    margin: 0;
+  }
+}
+
 .description_container {
-  width: 45%;
-  background-color: lightpink;
+  width: 75%;
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 40px 40px 70px auto;
+  grid-gap: 3px 15px;
 }
 
 .description_img {
-  width: 200px;
-  height: 160px;
-  background-color: red;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10%;
 }
+
+.description_name {
+  justify-self: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.description_species {
+  justify-self: center;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.description_full {
+  grid-column: span 2;
+  grid-row: 4 / 5;
+}
+
+@media (max-width: 670px) {
+  .description_container {
+    width: 45%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 25px 25px 60px auto;
+    grid-gap: 15px 0;
+  }
+
+  .description_img {
+    width: 200px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    justify-self: center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10%;
+  }
+
+  .description_name {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .description_species {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+  }
+
+  .description_player {
+    grid-row: 4/ 5;
+    grid-column: 1 / 2;
+  }
+
+  .description_full {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
+}
+
 
 @media (max-width: 450px) {
   .description_container {

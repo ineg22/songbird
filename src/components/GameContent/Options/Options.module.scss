@@ -1,11 +1,17 @@
 .options_container {
-  width: 45%;
-  background-color: lightpink;
+  width: 20%;
 }
 
-.options_list {}
+.options_list {
+  list-style: none;
+  padding-left: 10px;
+}
 
-.options_item {}
+@media (max-width: 670px) {
+  .options_container {
+    width: 45%;
+  }
+}
 
 @media (max-width: 450px) {
   .options_container {

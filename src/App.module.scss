@@ -1,9 +1,11 @@
 .container {
-  width: 1024px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: lightslategray;
+  width: 1024px;
+  margin: 0 auto;
+
+  font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", sans-serif;
+  color: white;
 }
 
 @media (max-width: 1024px) {

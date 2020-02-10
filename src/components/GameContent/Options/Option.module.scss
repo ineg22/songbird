@@ -1,0 +1,38 @@
+.options_item {
+  height: 23px;
+  margin-bottom: 2px;
+
+  text-align: center;
+
+  background-color: grey;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  &:hover {
+    border: 1px solid lightblue;
+  }
+}
+
+.options_item__correct {
+  background-color: green;
+}
+
+.options_item__incorrect {
+  background-color: red;
+}
+
+.options_button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+
+  color: white;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  user-select: none;
+}
