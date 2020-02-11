@@ -22,28 +22,49 @@ class App extends Component {
       levelDone: false,
       gameDone: false,
     };
-    this.onKeyPress = this.onKeyPress.bind(this);
+
+    this.audioCorrect = new Audio('./assets/sounds/respuesta-correcta.mp3');
+    this.audioIncorrect = new Audio('./assets/sounds/you-opinion-is-incorrect.mp3');
+
     this.onOptionClick = this.onOptionClick.bind(this);
     this.onNextClick = this.onNextClick.bind(this);
+    this.onRestartClick = this.onRestartClick.bind(this);
   }
 
-  onKeyPress() {
-    this.setState(state => state);
+  onRestartClick() {
+    this.setState({
+      currentQuestionBlock: 0,
+      // currentRightOption: Math.floor(Math.random() * 6),
+      currentRightOption: 0,
+      currentBlockSelectedOptions: [false, false, false, false, false, false],
+      lastSelectedOption: null,
+      score: 0,
+      levelDone: false,
+      gameDone: false,
+    });
   }
 
   onOptionClick(id) {
-    this.setState(state => {
-      const newCurrentBlockSelectedOptions = state.currentBlockSelectedOptions.map((el, i) => {
-        return i === id && !state.levelDone ? true : el;
+    this.setState(prevState => {
+      const isCorrect = prevState.currentRightOption === id;
+
+      const newLevelDone = prevState.levelDone ? prevState.levelDone : isCorrect;
+      const newCurrentBlockSelectedOptions = prevState.currentBlockSelectedOptions.map((el, i) => {
+        return i === id && !prevState.levelDone ? true : el;
       });
-      const newLevelDone = state.levelDone ? state.levelDone : state.currentRightOption === id;
       const newScore =
-        state.currentRightOption === id && !state.levelDone
-          ? state.score + state.currentBlockSelectedOptions.filter(el => !el).length - 1
-          : state.score;
+        isCorrect && !prevState.levelDone
+          ? prevState.score + prevState.currentBlockSelectedOptions.filter(el => !el).length - 1
+          : prevState.score;
+
+      if (isCorrect && !prevState.levelDone) {
+        this.playSound(true);
+      } else if (!isCorrect && !prevState.levelDone) {
+        this.playSound(false);
+      }
 
       return {
-        ...state,
+        ...prevState,
         currentBlockSelectedOptions: newCurrentBlockSelectedOptions,
         lastSelectedOption: id,
         levelDone: newLevelDone,
@@ -53,19 +74,19 @@ class App extends Component {
   }
 
   onNextClick() {
-    this.setState(state => {
+    this.setState(prevState => {
       let newCurrentQuestionBlock;
       let newGameDone;
 
-      if (state.currentQuestionBlock === 5) {
+      if (prevState.currentQuestionBlock === 5) {
         newCurrentQuestionBlock = 0;
         newGameDone = true;
       } else {
-        newCurrentQuestionBlock = state.currentQuestionBlock + 1;
+        newCurrentQuestionBlock = prevState.currentQuestionBlock + 1;
         newGameDone = false;
       }
       return {
-        ...state,
+        ...prevState,
         gameDone: newGameDone,
         currentQuestionBlock: newCurrentQuestionBlock,
         levelDone: false,
@@ -75,6 +96,16 @@ class App extends Component {
         currentBlockSelectedOptions: [false, false, false, false, false, false],
       };
     });
+  }
+
+  playSound(isCorrect) {
+    this.audioIncorrect.load();
+
+    if (isCorrect) {
+      this.audioCorrect.play();
+    } else {
+      this.audioIncorrect.play();
+    }
   }
 
   render() {
@@ -96,7 +127,7 @@ class App extends Component {
             currentQuestionBlock={currentQuestionBlock}
             score={score}
           />
-          <GameOver score={score} />
+          <GameOver score={score} onRestartClick={this.onRestartClick} />
         </div>
       );
     }

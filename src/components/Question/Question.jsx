@@ -17,7 +17,7 @@ export default function Question({ currentRightOption, levelDone, data }) {
           <span>{levelDone ? data[currentRightOption].name : '******'}</span>
         </div>
         <div className={styles.player}>
-          <Player audio={data[currentRightOption].audio} />
+          <Player audio={data[currentRightOption].audio} levelDone={levelDone} />
         </div>
       </div>
     </div>
