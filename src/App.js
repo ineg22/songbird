@@ -23,7 +23,7 @@ class App extends Component {
       gameDone: false,
     };
 
-    this.audioCorrect = new Audio('./assets/sounds/respuesta-correcta.mp3');
+    this.audioCorrect = new Audio('./assets/sounds/correct-answer-sound-effect.mp3');
     this.audioIncorrect = new Audio('./assets/sounds/you-opinion-is-incorrect.mp3');
 
     this.onOptionClick = this.onOptionClick.bind(this);
@@ -100,6 +100,7 @@ class App extends Component {
 
   playSound(isCorrect) {
     this.audioIncorrect.load();
+    this.audioCorrect.load();
 
     if (isCorrect) {
       this.audioCorrect.play();

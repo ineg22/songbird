@@ -11,6 +11,7 @@ export default function GameOver({ score, onRestartClick }) {
       <button type="button" className={styles.restart} onClick={onRestartClick}>
         Restart
       </button>
+      <div className={score === 30 ? styles.absoluteWin : ''} />
     </div>
   );
 }

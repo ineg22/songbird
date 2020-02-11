@@ -42,3 +42,40 @@
     border: 2px solid lightblue;
   }
 }
+
+.absoluteWin {
+  position: absolute;
+  margin-top: 20px;
+
+  background-image: url("../../assets/images/winner.jpg");
+  background-size: cover;
+  border-radius: 20px;
+
+  animation: circleDrive 5s;
+}
+
+@keyframes circleDrive {
+  from {
+    width: 200px;
+    height: 120px;
+    transform: rotate(0deg);
+  }
+
+
+  66% {
+    width: 600px;
+    height: 360px;
+    transform: rotate(360deg);
+  }
+
+  99% {
+    width: 600px;
+    height: 360px;
+    transform: rotate(360deg);
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+  }
+}

@@ -69,6 +69,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      favicon: 'src/assets/images/favicon.png',
     }),
     new CopyPlugin([{ from: 'src/assets/sounds/', to: 'assets/sounds' }]),
     // new BundleAnalyzerPlugin(),
