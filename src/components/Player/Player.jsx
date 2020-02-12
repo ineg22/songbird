@@ -20,6 +20,7 @@ export default class Player extends Component {
     const { audio } = this.props;
     return (
       <ReactAudioPlayer
+        preload="none"
         autoPlayAfterSrcChange={false}
         showVolumeControl={false}
         showLoopControl={false}
