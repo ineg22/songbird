@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
-  watch: true,
+  // watch: true,
   // devServer: {
   //   hot: false,
   // },

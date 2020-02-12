@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
+import ReactAudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/src/styles.scss';
 import './Player.scss';
 
 export default class Player extends Component {
@@ -11,7 +12,7 @@ export default class Player extends Component {
   componentDidUpdate() {
     const { levelDone } = this.props;
     if (levelDone) {
-      this.ref.audioEl.pause();
+      this.ref.audio.pause();
     }
   }
 
@@ -19,7 +20,11 @@ export default class Player extends Component {
     const { audio } = this.props;
     return (
       <ReactAudioPlayer
-        controls
+        autoPlayAfterSrcChange={false}
+        showVolumeControl={false}
+        showLoopControl={false}
+        showJumpControls={false}
+        autoPlay={false}
         src={audio}
         ref={el => {
           this.ref = el;

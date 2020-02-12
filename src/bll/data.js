@@ -2,13 +2,12 @@ const birdsData = [
   [
     {
       id: 0,
-      name: 'Ворон',
-      species: 'Corvus corax',
+      name: 'Nirvana',
+      species: 'https://ru.wikipedia.org/wiki/Nirvana',
       description:
-        'Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.',
-      image: 'https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg',
-      audio:
-        'https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3',
+        'Nirvana (МФА: [nɪɹˈvɑnə]) — американская рок-группа, созданная вокалистом и гитаристом Куртом Кобейном и басистом Кристом Новоселичем в Абердине, штат Вашингтон, в 1987 году.',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/1/19/Nirvana_around_1992.jpg',
+      audio: '../assets/sounds/rock/nirvana.mp3',
     },
     {
       id: 1,
@@ -366,12 +365,12 @@ const birdsData = [
     },
   ],
   [
-    { name: 'Разминка', id: 0 },
-    { name: 'Воробьиные', id: 1 },
-    { name: 'Лесные птицы', id: 2 },
-    { name: 'Певчие птицы', id: 3 },
-    { name: 'Хищные птицы', id: 4 },
-    { name: 'Морские птицы', id: 5 },
+    { name: 'Рок', id: 0 },
+    { name: 'Поп', id: 1 },
+    { name: 'Хип-хоп', id: 2 },
+    { name: 'Метал', id: 3 },
+    { name: 'Регги', id: 4 },
+    { name: 'Джаз', id: 5 },
   ],
 ];
 
