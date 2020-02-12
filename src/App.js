@@ -14,8 +14,7 @@ class App extends Component {
     super();
     this.state = {
       currentQuestionBlock: 0,
-      // currentRightOption: Math.floor(Math.random() * 6),
-      currentRightOption: 0,
+      currentRightOption: Math.floor(Math.random() * 6),
       currentBlockSelectedOptions: [false, false, false, false, false, false],
       lastSelectedOption: null,
       score: 0,
@@ -34,8 +33,7 @@ class App extends Component {
   onRestartClick() {
     this.setState({
       currentQuestionBlock: 0,
-      // currentRightOption: Math.floor(Math.random() * 6),
-      currentRightOption: 0,
+      currentRightOption: Math.floor(Math.random() * 6),
       currentBlockSelectedOptions: [false, false, false, false, false, false],
       lastSelectedOption: null,
       score: 0,
@@ -91,8 +89,7 @@ class App extends Component {
         currentQuestionBlock: newCurrentQuestionBlock,
         levelDone: false,
         lastSelectedOption: null,
-        // currentRightOption: Math.floor(Math.random() * 6),
-        currentRightOption: 0,
+        currentRightOption: Math.floor(Math.random() * 6),
         currentBlockSelectedOptions: [false, false, false, false, false, false],
       };
     });

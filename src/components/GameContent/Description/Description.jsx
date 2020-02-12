@@ -7,7 +7,7 @@ export default function Description({ lastSelectedOptionData }) {
     return (
       <div className={styles.empty}>
         <p>Послушайте плеер</p>
-        <p>Выберите птицу из списка</p>
+        <p>Выберите исполнителя из списка</p>
       </div>
     );
   }
@@ -18,7 +18,10 @@ export default function Description({ lastSelectedOptionData }) {
         style={{ backgroundImage: `url(${lastSelectedOptionData.image})` }}
       />
       <div className={styles.description_name}>{lastSelectedOptionData.name}</div>
-      <div className={styles.description_species}>{lastSelectedOptionData.species}</div>
+      <a href={lastSelectedOptionData.species} className={styles.description_species}>
+        wiki link
+      </a>
+      {/* <div className={styles.description_species}>{lastSelectedOptionData.species}</div> */}
       <div className={styles.description_player}>
         <Player audio={lastSelectedOptionData.audio} />
       </div>

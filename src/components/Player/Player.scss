@@ -1,4 +1,35 @@
-.react-audio-player {
+.rhap_container {
   outline: none;
-  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  box-shadow: none;
+  height: 60px;
+  min-width: 0;
+
+  background-color: transparent;
+}
+
+.rhap_controls-section {
+  flex: initial;
+}
+
+.rhap_progress-section {
+  flex: initial;
+  flex-grow: 1;
+}
+
+.rhap_play-pause-button {
+  color: rgb(85, 154, 218);
+}
+
+.rhap_time {
+  color: white;
+}
+
+.rhap_progress-indicator {
+  background: rgb(85, 154, 218);
+}
+
+.rhap_progress-bar {
+  background-color: white;
 }
