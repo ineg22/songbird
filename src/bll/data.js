@@ -336,12 +336,12 @@ const birdsData = [
     },
   ],
   [
-    { name: 'Рок', id: 0 },
-    { name: 'Поп', id: 1 },
-    { name: 'Хип-хоп', id: 2 },
-    { name: 'Метал', id: 3 },
-    { name: 'Регги', id: 4 },
-    { name: 'Птички', id: 5 },
+    { name: 'Rock', id: 0 },
+    { name: 'Pop', id: 1 },
+    { name: 'Hip-hop', id: 2 },
+    { name: 'Metall', id: 3 },
+    { name: 'Reggae', id: 4 },
+    { name: 'Birds', id: 5 },
   ],
 ];
 
